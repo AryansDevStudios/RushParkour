@@ -1,122 +1,107 @@
 # Rush Parkour
 
-> A brutally challenging 3D platformer where one wrong step sends you back to the very beginning.
+> **Sankalp & Santulan** — Every leap demands precision; every fall builds resolve.
+
+A high-precision 3D platformer engineered in **Unreal Engine 5.3.2** by **Aryan Gupta** ([AryansDevStudios](https://github.com/AryansDevStudios)). Navigate floating platforms suspended in an open sky environment, dodge AI-driven patrols, and conquer the void — without a single checkpoint.
 
 ---
 
-## About the Game
+## Developer
 
-**Rush Parkour** is a native Windows desktop game built in **Unreal Engine 5.3.2**. Players navigate a series of floating platforms suspended in an open sky environment, combining precise jumps, split-second timing, and enemy avoidance to reach the finish. There are no checkpoints — falling into the void resets all progress to the absolute beginning.
-
-The game draws heavy inspiration from *Getting Over It with Bennett Foddy*, adopting a **"try, try but don't cry"** philosophy. It is designed to be intentionally difficult and deeply frustrating, yet compulsively replayable. Expert gamers may complete a run in **4 to 6 attempts**, while casual players typically require **10 to 20 attempts**.
-
----
-
-## Expo Theme
-
-| Detail            | Value                                                    |
-| :---------------- | :------------------------------------------------------- |
-| **Category**      | AVGC (Animation, Visual Effects, Gaming, and Comics)     |
-| **Platform**      | Native Windows Desktop Application (standalone `.exe`)   |
-| **Engine**        | Unreal Engine 5.3.2                                      |
-| **Rendering API** | DirectX 12 — Shader Model 6                              |
-| **Build Size**    | ~906 MB                                                  |
+| Field | Detail |
+| :--- | :--- |
+| **Developer** | Aryan Gupta |
+| **Studio** | [AryansDevStudios](https://github.com/AryansDevStudios) |
+| **Repository** | [github.com/AryansDevStudios/RushParkour](https://github.com/AryansDevStudios/RushParkour) |
+| **Platform** | Windows 10 / 11 (64-bit standalone `.exe`) |
+| **Engine** | Unreal Engine 5.3.2 (DirectX 12 SM6) |
+| **Build Size** | ~906 MB unpacked (744 MB zip) |
 
 ---
 
-## Gameplay
+## About
 
-### Core Loop
+**Rush Parkour** is a spatial precision platformer built in a full 3D coordinate space. The player navigates a series of geometric floating platforms in an open sky environment, requiring kinetic balance, forward anticipation, and split-second landing accuracy.
 
-1. **Start** — The player spawns at the beginning of the parkour course.
-2. **Traverse** — Jump across static, moving, and physics-triggered platforms floating in the sky.
-3. **Survive** — Avoid enemy patrols that track and pursue the player on contact.
-4. **Fall or Die** — Missing a platform or touching an enemy resets the player to the very start.
-5. **Repeat** — Learn the course, improve timing, and push further each attempt.
+### Philosophy
+The game does not rely on artificial shortcuts or midway checkpoints. A single missed landing resets the player back to the course origin point. This structure transforms gameplay from arbitrary input into a disciplined study of distance, velocity, and platform behavior. Expert players may finish in 4 to 6 attempts; casual players typically need 10 to 20.
+
+### Camera & Perspective
+The environment, lighting, meshes, and physics are constructed in **native 3D space**. However, the player's viewport is locked to a **stabilized 2.5D tracking perspective**. Mouse camera rotation is disabled by design — the player's focus stays entirely on lateral momentum and jump precision. The **P** key toggles between front, behind-character, and overhead camera angles.
+
+---
+
+## Mechanics
 
 ### Platform Types
 
-| Type                        | Behaviour                                                                                           |
-| :-------------------------- | :-------------------------------------------------------------------------------------------------- |
-| **Static Platforms**        | Fixed in place. Form the backbone of the course layout.                                             |
-| **Moving Platforms**        | Translate along predefined paths, requiring the player to time their jumps.                         |
-| **Physics-Triggered Platforms** | Remain static until the player lands on them, at which point gravity simulation activates and they begin to fall — demanding split-second reactions. |
+| Type | Behavior |
+| :--- | :--- |
+| **Static Anchors** | Stationary platforms forming reliable bases throughout the course. |
+| **Kinematic Movers** | Platforms translating along smooth cyclical timelines to test timing and anticipation. |
+| **Reactive Collapsers** | Appear solid until player contact activates Chaos gravity simulation — they fall into the void. |
 
-### Enemies
-
-Simple AI-driven entities patrol specific platforms. They use pathfinding to navigate their patrol routes and actively track the player within their field of view. Contact with an enemy kills the player instantly — but players can neutralize enemies by **jumping on their heads**.
-
-### Death & Ragdoll
-
-When the player is killed, the character's skeletal mesh transitions into a full **ragdoll physics** state. Gravity is applied to the entire body rig, causing it to tumble and fall realistically off the platform before the game resets.
+### Patrol Hazards & Combat
+- **AI Pathfinding:** Autonomous entities patrol platform surfaces using NavMesh, tracking player position within their field of view.
+- **Vertical Stomp:** Players neutralize patrols by landing on them from above.
+- **Ragdoll Death:** Contact with hazards disengages skeletal constraints, simulating realistic physics-driven falls.
 
 ---
 
-## Design Philosophy
+## Controls
 
-### Inspiration
+| Key | Action |
+| :--- | :--- |
+| **A / D** | Move left / right along the course |
+| **Spacebar** | Jump |
+| **P** | Toggle camera perspective (front / behind / overhead) |
+| **Escape** | Pause menu |
 
-The game is modeled after the punishing design philosophy of *Getting Over It with Bennett Foddy* — a game where losing all progress is not a bug, but the entire point. Every fall teaches the player something new about the course.
-
-### Real-World Purpose
-
-Rush Parkour addresses the gap in domestic game production in India. By demonstrating what a single student can build using modern AAA-grade tools (Unreal Engine 5), it aims to inspire Indian youth to transition from being consumers of Western games to active **producers and developers** in the global gaming industry.
-
----
-
-## How to Play
-
-1. Navigate to the game folder.
-2. Run **`Rush_Parkour.exe`** (the launcher in the root directory).
-3. Use standard controls:
-   - **WASD** — Movement
-   - **Space** — Jump
-4. Reach the end of the parkour course without falling.
-
-### System Requirements
-
-| Component  | Minimum Recommended                                              |
-| :--------- | :--------------------------------------------------------------- |
-| **OS**     | Windows 10 / 11 (64-bit)                                        |
-| **CPU**    | Intel Core i3 11th Gen or equivalent                             |
-| **RAM**    | 8 GB                                                             |
-| **GPU**    | Intel integrated or any dedicated GPU                            |
-| **Storage**| ~1 GB free disk space                                            |
-| **API**    | DirectX 12 compatible hardware                                   |
-
-> Performance benchmarked on an **11th Gen Intel Core i5-1135G7** with **8 GB RAM** and **Intel Iris Xe Graphics**.
+> *Camera is fixed to a stabilized tracking perspective. Mouse input does not control the camera.*
 
 ---
 
-## Project Structure
+## System Requirements
 
-```
-RushParkour/
-├── Rush_Parkour.exe                  ← Game launcher
-├── Engine/                           ← Unreal Engine runtime binaries & prerequisites
-│   ├── Binaries/                     ← Third-party DLLs (D3D, audio, debugging)
-│   ├── Extras/Redist/                ← C++ runtime prerequisite installer
-│   └── Saved/                        ← Engine configuration
-├── Rush_Parkour/                     ← Game data
-│   ├── Binaries/Win64/               ← Compiled game executable (212 MB)
-│   ├── Content/Paks/                 ← Packaged game assets (IoStore containers)
-│   │   ├── Rush_Parkour-Windows.ucas ← Primary asset container (~605 MB)
-│   │   ├── Rush_Parkour-Windows.utoc ← Asset table of contents
-│   │   ├── Rush_Parkour-Windows.pak  ← Supplementary pak file
-│   │   ├── global.ucas               ← Global engine assets
-│   │   └── global.utoc               ← Global table of contents
-│   └── Saved/                        ← Runtime logs, config, and save data
-```
+| Component | Minimum |
+| :--- | :--- |
+| **OS** | Windows 10 / 11 (64-bit) |
+| **CPU** | Intel Core i3 (11th Gen) or equivalent |
+| **RAM** | 8 GB |
+| **GPU** | DirectX 12 compatible (integrated GPUs supported) |
+| **Storage** | ~1 GB free space |
+
+### Performance (tested on i5-1135G7, 8 GB DDR4, Intel Iris Xe)
+
+| Condition | FPS |
+| :--- | :--- |
+| Plugged in — High settings | 60 – 70+ FPS |
+| Battery — High settings | 50 – 60 FPS |
+| Low settings | Up to 80 FPS |
 
 ---
 
-## Credits
+## Technology Stack
 
-- **Engine:** Epic Games — Unreal Engine 5.3.2
-- **3D Assets:** Sourced from the Unreal Engine Marketplace, modified and optimized in Blender
-- **Development:** AryansDevStudios (Solo student project)
-- **Github:** https://github.com/AryansDevStudio
+| Technology | Role |
+| :--- | :--- |
+| Unreal Engine 5.3.2 | Core game runtime |
+| Blueprint Visual Scripting | Complete gameplay logic |
+| Blender 3D | Retopology, polygon reduction, LOD generation |
+| DirectX 12 SM6 | Low-overhead graphics rendering |
+| Chaos Physics | Dynamic gravity simulation & ragdoll |
+| NavMesh AI Module | Enemy pathfinding & player tracking |
+| IK Rig + Control Rig | Inverse kinematics & animation rigging |
+| IoStore / Zen Store | Asset container packaging (.ucas/.utoc) |
 
 ---
 
-*Rush Parkour — Fall. Learn. Rise. Repeat.*
+## Download
+
+1. Download [`RushParkour_v1.0.zip`](https://github.com/AryansDevStudios/RushParkour/releases/tag/v1.0) (744 MB).
+2. Extract the archive anywhere on your PC.
+3. Launch **`Rush_Parkour.exe`**. No installation or runtime dependencies required.
+
+---
+
+*© 2026 Aryan Gupta • AryansDevStudios*
