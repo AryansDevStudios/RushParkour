@@ -4,22 +4,11 @@
 **Regional Event:** Gorakhpur · 30 Sept 2026 · RO Prayagraj  
 **Presenters:** Aryan Gupta (Lead Developer) & Aditi (Co-Presenter)  
 
-<style>
-  @media print {
-    .page-break { page-break-after: always; break-after: page; }
-    body { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; line-height: 1.4; color: #111; }
-    h2, h3 { color: #000; margin-top: 0.5rem; margin-bottom: 0.3rem; }
-    p, blockquote { margin-bottom: 0.45rem; }
-  }
-  .page-break { page-break-after: always; break-after: page; border-top: 2px dashed #999; margin: 1.8rem 0; padding-top: 0.8rem; }
-  .page-tag { font-size: 0.8rem; font-weight: bold; color: #666; text-transform: uppercase; letter-spacing: 1px; }
-</style>
-
 ---
 
-<div class="page-tag">PAGE 1 OF 4 — TIMELINE & STAGE 1 / STAGE 2 (PART 1)</div>
+## [PAGE 1 OF 4] — TIMELINE & STAGE 1 / STAGE 2 (PART 1)
 
-### ⏱️ Quick Flow Overview
+### Quick Flow Overview
 1. **Aryan (~45 sec)** ──► Greet judges, introduce team, school, project title & hardware problem
 2. **Aditi (~1 min 15s)** ──► Theme motto, gameplay philosophy, no-checkpoints rule, live camera demo
 3. **Aryan (~1 min 30s)** ──► Technical deep dive: Blender retopology, hybrid physics, 60+ FPS on laptops
@@ -28,7 +17,7 @@
 
 ---
 
-### 🎬 Complete Rehearsal Script
+### Complete Rehearsal Script
 
 #### Stage 1: The Opening & Introduction (Aryan Leads)
 *(As the judges approach your stall, make eye contact, smile, and stand tall.)*
@@ -56,9 +45,9 @@
 >  
 > In today’s digital era, millions of school students spend hours passively playing mobile and computer games. Aligned with the **NEP 2020 Skill Education vision**, our goal was to shift from being passive game consumers to active digital creators.*
 
-<div class="page-break"></div>
+---
 
-<div class="page-tag">PAGE 2 OF 4 — STAGE 2 (PART 2) & STAGE 3 (PART 1)</div>
+## [PAGE 2 OF 4] — STAGE 2 (PART 2) & STAGE 3 (PART 1)
 
 > *The game is set on floating geometric islands high in an open sky. The objective is straightforward: traverse the platforms from start to finish.  
 > But here is the defining rule: **there are zero checkpoints**.  
@@ -96,9 +85,9 @@
 > **Hybrid Physics Simulation & Reactive Platforms:**  
 > Calculating continuous physics on hundreds of floating platforms will choke a laptop CPU. Instead, our static platforms consume zero physics processing. Crumbling platforms remain*
 
-<div class="page-break"></div>
+---
 
-<div class="page-tag">PAGE 3 OF 4 — STAGE 3 (PART 2) & STAGE 4 (WRAP-UP)</div>
+## [PAGE 3 OF 4] — STAGE 3 (PART 2) & STAGE 4 (WRAP-UP)
 
 > *dormant until the player steps on them, triggering a 0.65-second delay before awakening Chaos gravity physics to drop only that single platform into the void.  
 >  
@@ -135,11 +124,11 @@
 >  
 > Thank you very much for your time and valuable guidance!"*
 
-<div class="page-break"></div>
+---
 
-<div class="page-tag">PAGE 4 OF 4 — SEAMLESS Q&A COLLABORATION MATRIX</div>
+## [PAGE 4 OF 4] — SEAMLESS Q&A COLLABORATION MATRIX
 
-### 🎬 Seamless Q&A Collaboration Rule
+### Seamless Q&A Collaboration Rule
 
 | If the question is about... | Who answers: | How to transition smoothly: |
 | :--- | :---: | :--- |
@@ -148,7 +137,7 @@
 
 ---
 
-### 💡 Quick Pivot Reminders for Rehearsal
+### Quick Pivot Reminders for Rehearsal
 1. **Never talk over each other:** Always allow your partner to finish their thought before adding a valuable 1-sentence observation.
 2. **If Aditi gets a technical question:** Pivot immediately to Aryan with respect and confidence.
 3. **If Aryan gets a question about student impact or NEP 2020:** Pivot smoothly to Aditi so she can shine.
