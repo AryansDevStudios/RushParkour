@@ -3,7 +3,7 @@
 **Project Title:** Rush Parkour  
 **Theme:** Animation, Visual Effects, Gaming, Comics (AVGC)  
 **Participating Institution:** M.P. Public School, Anand Nagar, Maharajganj  
-**Regional Jurisdiction:** CBSE Regional Office Prayagraj | Event Venue: Gorakhpur  
+**Regional Jurisdiction:** CBSE Regional Office Prayagraj | Event Venue: Gorakhpur · 30 Sept 2026  
 **Target Duration:** 4.5 to 5.0 Minutes (+ 2 Minutes Q&A / Live Judge Gameplay)  
 
 ---
