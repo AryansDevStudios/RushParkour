@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rush Parkour - CBSE Skill Expo 2026-27 Submission</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+    <title>Rush Parkour — CBSE Skill Expo 2026–27 Submission</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-base: #090a10;
-            --bg-surface: #151824;
-            --bg-surface-elevated: #1e2233;
+            --bg-surface: #131622;
+            --bg-surface-elevated: #1a1e2e;
+            --bg-card: rgba(22, 26, 40, 0.85);
             --text-main: #f0f2f5;
-            --text-muted: #a0a5b8;
+            --text-muted: #9aa1b5;
             --accent-cyan: #00d4ff;
             --accent-purple: #7b2fff;
             --accent-gold: #f5b700;
+            --accent-green: #10b981;
             --border-subtle: rgba(255, 255, 255, 0.08);
             --gradient-primary: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
             --gradient-gold: linear-gradient(135deg, var(--accent-gold), #ff8a00);
-            
             --font-display: 'Orbitron', sans-serif;
             --font-body: 'Inter', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
@@ -26,557 +27,744 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background-color: var(--bg-base); color: var(--text-main);
-            font-family: var(--font-body); line-height: 1.6; overflow-x: hidden;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.5;
+            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
-        h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; letter-spacing: 1px; margin-bottom: 1rem; }
-        p { color: var(--text-muted); margin-bottom: 1rem; }
-        a { color: var(--accent-cyan); text-decoration: none; transition: all 0.3s ease; }
-        a:hover { color: #fff; text-shadow: 0 0 10px var(--accent-cyan); }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); font-weight: 700; letter-spacing: 0.5px; }
+        p { color: var(--text-muted); margin-bottom: 0.75rem; }
+        a { color: var(--accent-cyan); text-decoration: none; transition: all 0.25s ease; }
+        a:hover { color: #fff; text-shadow: 0 0 8px var(--accent-cyan); }
+        .container { max-width: 1240px; margin: 0 auto; padding: 0 1.5rem; }
 
-        /* Top Banner */
+        /* Top Official CBSE Banner */
         .top-banner {
-            background: rgba(123, 47, 255, 0.15); border-bottom: 1px solid rgba(123, 47, 255, 0.3);
-            padding: 0.5rem 0; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.5px;
-            backdrop-filter: blur(10px); position: relative; z-index: 100;
+            background: rgba(123, 47, 255, 0.18);
+            border-bottom: 1px solid rgba(123, 47, 255, 0.35);
+            padding: 0.45rem 0;
+            font-size: 0.82rem;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 100;
         }
-        .top-banner .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-        .badge-avgc { background: var(--gradient-primary); padding: 2px 8px; border-radius: 4px; color: #fff; font-weight: 700; text-transform: uppercase; }
+        .top-banner .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .badge-theme {
+            background: var(--gradient-primary);
+            padding: 2px 10px;
+            border-radius: 4px;
+            color: #fff;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
 
-        /* Sub Banner */
+        /* Sub Navigation Banner */
         .sub-banner {
-            background: rgba(0, 0, 0, 0.4); border-bottom: 1px solid var(--border-subtle);
-            padding: 1rem 0; font-size: 0.9rem; position: sticky; top: 0; z-index: 99; backdrop-filter: blur(15px);
+            background: rgba(9, 10, 16, 0.85);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 0.75rem 0;
+            font-size: 0.86rem;
+            position: sticky;
+            top: 0;
+            z-index: 99;
+            backdrop-filter: blur(15px);
         }
-        .sub-banner .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-        .developer-info { display: flex; align-items: center; gap: 1.5rem; }
+        .sub-banner .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .institution-info { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
         .github-pill {
-            display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255, 255, 255, 0.1);
-            padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.2);
-            font-family: var(--font-mono); font-size: 0.8rem; transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 3px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--text-main);
+            transition: all 0.25s;
         }
-        .github-pill:hover { background: rgba(255, 255, 255, 0.2); border-color: var(--accent-cyan); }
+        .github-pill:hover { background: rgba(255, 255, 255, 0.18); border-color: var(--accent-cyan); color: #fff; }
 
         /* Hero Section */
-        .hero { padding: 6rem 0; text-align: center; position: relative; background: radial-gradient(circle at center, rgba(123, 47, 255, 0.1) 0%, transparent 60%); }
-        .hero::before {
-            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-            width: 80%; height: 1px; background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent); opacity: 0.5;
+        .hero {
+            padding: 3.5rem 0 2.5rem 0;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(circle at center, rgba(123, 47, 255, 0.12) 0%, transparent 65%);
         }
         .title-gradient {
-            font-size: 4.5rem; font-weight: 900; text-transform: uppercase;
-            background: linear-gradient(180deg, #ffffff 0%, #a5b4fc 100%); -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.3));
+            font-size: 3.6rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            background: linear-gradient(180deg, #ffffff 20%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.35rem;
+            filter: drop-shadow(0 0 16px rgba(0, 212, 255, 0.25));
         }
-        .tagline { font-size: 1.2rem; color: var(--accent-cyan); margin-bottom: 2rem; font-style: italic; letter-spacing: 2px; }
-        .hero-desc { max-width: 700px; margin: 0 auto 3rem auto; font-size: 1.1rem; }
-        
-        /* Buttons */
-        .btn-group { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 3rem; flex-wrap: wrap; }
+        .tagline {
+            font-size: 1.15rem;
+            color: var(--accent-cyan);
+            margin-bottom: 1.25rem;
+            font-style: italic;
+            letter-spacing: 1.5px;
+            font-weight: 500;
+        }
+        .hero-desc {
+            max-width: 820px;
+            margin: 0 auto 1.8rem auto;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
         .btn {
-            display: inline-flex; align-items: center; gap: 0.75rem; padding: 1rem 2rem; border-radius: 4px;
-            font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
-            transition: all 0.3s ease; cursor: pointer; border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.6rem;
+            border-radius: 4px;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
         }
-        .btn-primary { background: var(--gradient-primary); color: #fff; box-shadow: 0 0 20px rgba(123, 47, 255, 0.4); }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(0, 212, 255, 0.6); color: #fff; text-shadow: none; }
-        .btn-outline { background: transparent; color: #fff; border: 1px solid var(--accent-cyan); }
-        .btn-outline:hover { background: rgba(0, 212, 255, 0.1); box-shadow: inset 0 0 10px rgba(0, 212, 255, 0.2); }
-
-        /* Stats */
-        .hero-stats { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: #fff;
+            box-shadow: 0 0 16px rgba(123, 47, 255, 0.4);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 24px rgba(0, 212, 255, 0.6);
+            color: #fff;
+        }
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 1px solid var(--accent-cyan);
+        }
+        .btn-outline:hover {
+            background: rgba(0, 212, 255, 0.1);
+            box-shadow: inset 0 0 10px rgba(0, 212, 255, 0.2);
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-subtle);
+            max-width: 860px;
+            margin: 0 auto;
+        }
         .stat-item { display: flex; flex-direction: column; align-items: center; }
-        .stat-value { font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: #fff; }
-        .stat-label { font-size: 0.85rem; color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 1px; }
+        .stat-value { font-family: var(--font-mono); font-size: 1.25rem; font-weight: 700; color: #fff; }
+        .stat-label { font-size: 0.75rem; color: var(--accent-cyan); text-transform: uppercase; letter-spacing: 0.8px; }
 
         /* Sections */
-        section { padding: 5rem 0; position: relative; }
-        .section-header { text-align: center; margin-bottom: 4rem; }
-        .section-title { font-size: 2.2rem; display: inline-block; position: relative; padding-bottom: 1rem; }
+        section { padding: 3.5rem 0; position: relative; }
+        .section-header { text-align: center; margin-bottom: 2.2rem; }
+        .section-title { font-size: 2rem; display: inline-block; position: relative; padding-bottom: 0.65rem; color: #fff; }
         .section-title::after {
             content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
-            width: 60px; height: 3px; background: var(--accent-cyan);
+            width: 50px; height: 3px; background: var(--accent-cyan); border-radius: 2px;
         }
+        .section-desc { font-size: 0.92rem; color: var(--text-muted); max-width: 760px; margin: 0.4rem auto 0 auto; }
 
-        /* Grid */
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        .card {
-            background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 8px;
-            padding: 2rem; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s;
-            position: relative; overflow: hidden;
+        /* VIEWPORT-EFFICIENT CBSE CRITERIA DASHBOARD */
+        .assessment-section {
+            background: var(--bg-surface-elevated);
+            border-top: 1px solid rgba(245, 183, 0, 0.25);
+            border-bottom: 1px solid rgba(245, 183, 0, 0.25);
+            padding: 2.5rem 0;
         }
-        .card:hover { transform: translateY(-5px); border-color: rgba(123, 47, 255, 0.5); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .card::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
-            background: var(--gradient-primary); opacity: 0; transition: opacity 0.3s;
-        }
-        .card:hover::before { opacity: 1; }
-
-        /* Assessment Section (Masonry-style Grid) */
-        .assessment-section { background: var(--bg-surface-elevated); border-top: 1px solid rgba(245, 183, 0, 0.2); border-bottom: 1px solid rgba(245, 183, 0, 0.2); }
         .assessment-section .section-title::after { background: var(--accent-gold); }
-        .criteria-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
-        .criteria-card { background: rgba(9, 10, 16, 0.5); border: 1px solid rgba(245, 183, 0, 0.15); padding: 1.5rem; border-radius: 6px; }
-        .criteria-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
-        .criteria-title { font-family: var(--font-display); font-size: 1.1rem; color: #fff; margin: 0; }
-        .criteria-weight { font-family: var(--font-mono); font-size: 1.2rem; font-weight: 700; color: var(--accent-gold); background: rgba(245, 183, 0, 0.1); padding: 2px 8px; border-radius: 4px; }
         
-        .progress-bar-bg { height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; margin-bottom: 1rem; overflow: hidden; }
-        .progress-bar-fill { height: 100%; background: var(--gradient-gold); border-radius: 3px; }
-        
-        .criteria-list { color: var(--text-muted); font-size: 0.9rem; padding-left: 1.2rem; line-height: 1.5; margin: 0; }
-        .criteria-list li { margin-bottom: 0.5rem; }
-        .criteria-list li:last-child { margin-bottom: 0; }
-
-        /* Keycaps */
-        .key-row { display: flex; align-items: center; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-subtle); }
-        .key-btn {
-            display: inline-block; background: linear-gradient(180deg, #2a2d3e 0%, #1a1c29 100%);
-            border: 1px solid #3a3f58; border-bottom: 3px solid #0f111a; border-radius: 6px;
-            padding: 0.5rem 1rem; font-family: var(--font-mono); font-weight: 700; color: #fff;
-            min-width: 40px; text-align: center; margin-right: 1.5rem; box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        .criteria-dashboard {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.85rem;
         }
-        .key-action { color: var(--text-main); font-size: 1.1rem; }
+        .criteria-card {
+            background: rgba(11, 13, 20, 0.8);
+            border: 1px solid rgba(245, 183, 0, 0.16);
+            padding: 0.95rem;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            transition: all 0.25s ease;
+        }
+        .criteria-card:hover {
+            border-color: rgba(245, 183, 0, 0.45);
+            background: rgba(14, 17, 26, 0.95);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+        }
+        .criteria-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.4rem;
+        }
+        .criteria-title {
+            font-family: var(--font-display);
+            font-size: 0.86rem;
+            color: #fff;
+            margin: 0;
+            line-height: 1.2;
+        }
+        .criteria-weight {
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            background: rgba(245, 183, 0, 0.12);
+            padding: 1px 6px;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+        .progress-bar-bg {
+            height: 4px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 2px;
+            margin-bottom: 0.55rem;
+            overflow: hidden;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background: var(--gradient-gold);
+            border-radius: 2px;
+        }
+        .criteria-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.79rem;
+            color: var(--text-muted);
+            line-height: 1.35;
+        }
+        .criteria-list li {
+            margin-bottom: 0.35rem;
+            position: relative;
+            padding-left: 0.85rem;
+        }
+        .criteria-list li:last-child { margin-bottom: 0; }
+        .criteria-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan);
+            font-weight: bold;
+        }
+        .criteria-list strong {
+            color: #e2e8f0;
+            font-weight: 600;
+        }
+
+        /* Summary Card */
+        .summary-card {
+            background: linear-gradient(145deg, rgba(123, 47, 255, 0.15), rgba(0, 212, 255, 0.08));
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        .summary-badge {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent-green);
+            padding: 1px 8px;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.74rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Grid Layouts */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+        .card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.25s ease;
+        }
+        .card:hover {
+            border-color: rgba(123, 47, 255, 0.4);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        /* Camera Callout Card */
+        .camera-card {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(123, 47, 255, 0.08));
+            border: 1px solid rgba(0, 212, 255, 0.35);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1.25rem;
+            align-items: center;
+        }
+        .camera-icon { font-size: 2.2rem; flex-shrink: 0; }
+        .camera-title { color: var(--accent-cyan); font-size: 1.15rem; margin-bottom: 0.35rem; }
+
+        /* Controls Section */
+        .key-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.85rem;
+            padding-bottom: 0.85rem;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .key-row:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+        .key-btn {
+            display: inline-block;
+            background: linear-gradient(180deg, #2a2d3e 0%, #1a1c29 100%);
+            border: 1px solid #3a3f58;
+            border-bottom: 3px solid #0f111a;
+            border-radius: 5px;
+            padding: 0.35rem 0.85rem;
+            font-family: var(--font-mono);
+            font-weight: 700;
+            color: #fff;
+            min-width: 38px;
+            text-align: center;
+            margin-right: 1.25rem;
+            font-size: 0.88rem;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+        }
+        .key-action { color: var(--text-main); font-size: 0.95rem; }
+
+        /* Simple Technical Explanations Section */
+        .term-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 6px;
+            padding: 1.2rem;
+        }
+        .term-badge {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            background: rgba(0, 212, 255, 0.12);
+            color: var(--accent-cyan);
+            padding: 1px 6px;
+            border-radius: 3px;
+            margin-bottom: 0.4rem;
+            display: inline-block;
+        }
+        .term-title { font-size: 1rem; color: #fff; margin-bottom: 0.4rem; }
+        .term-desc { font-size: 0.84rem; color: var(--text-muted); margin: 0; line-height: 1.45; }
 
         /* Footer */
-        footer { background: #050508; padding: 4rem 0 2rem 0; border-top: 1px solid var(--border-subtle); text-align: center; }
-        .footer-event { font-family: var(--font-display); color: #fff; font-size: 1.2rem; margin-bottom: 1rem; }
-        .footer-links { display: flex; justify-content: center; gap: 2rem; margin: 2rem 0; }
-        .footer-bottom { font-size: 0.85rem; color: var(--text-muted); margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05); }
-        
-        /* Animations */
-        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        footer {
+            background: #050508;
+            padding: 3rem 0 1.5rem 0;
+            border-top: 1px solid var(--border-subtle);
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        .footer-event { font-family: var(--font-display); color: #fff; font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin: 1.5rem 0; }
 
-        @media (max-width: 900px) {
+        /* Responsiveness */
+        @media (max-width: 1080px) {
+            .criteria-dashboard { grid-template-columns: repeat(2, 1fr); }
+            .grid-3 { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .criteria-dashboard { grid-template-columns: 1fr; }
             .grid-2, .grid-3 { grid-template-columns: 1fr; }
-            .title-gradient { font-size: 3rem; }
-            .hero-stats { flex-direction: column; gap: 1.5rem; }
-            .developer-info { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+            .title-gradient { font-size: 2.6rem; }
+            .hero-stats { gap: 1.25rem; }
+            .camera-card { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
-    <!-- Top Banner -->
+
+    <!-- Top Official Banner -->
     <div class="top-banner">
         <div class="container">
-            <div>CBSE Skill Expo & Guidance Festival 2026–27</div>
-            <div class="badge-avgc">Theme: Animation, Visual Effects, Gaming, Comics</div>
+            <div><strong>CBSE Skill Expo & Guidance Festival 2026–27</strong></div>
+            <div class="badge-theme">Theme: Animation, Visual Effects, Gaming, Comics</div>
             <div style="color: var(--accent-cyan);">Gorakhpur &middot; 8 Sept 2026 &middot; RO Prayagraj</div>
         </div>
     </div>
 
-    <!-- Sub Banner -->
+    <!-- Sub Navigation Banner -->
     <div class="sub-banner">
         <div class="container">
-            <div style="color: #fff; font-weight: 500;">
-                <span style="color: var(--text-muted);">Participating School:</span> M.P. Public School, Anand Nagar, Maharajganj
+            <div class="institution-info">
+                <div><span style="color: var(--text-muted);">Participating School:</span> <strong>M.P. Public School, Anand Nagar, Maharajganj</strong></div>
+                <div style="color: var(--border-subtle);">|</div>
+                <div><span style="color: var(--text-muted);">Student Developer:</span> <strong>Aryan Gupta (AryansDevStudios)</strong></div>
             </div>
-            <div class="developer-info">
-                <div><span style="color: var(--text-muted);">Developer / Student:</span> Aryan Gupta (AryansDevStudios)</div>
+            <div>
                 <a href="https://github.com/AryansDevStudios/RushParkour" target="_blank" class="github-pill">
-                    View Project Files
+                    <svg height="14" width="14" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                    </svg>
+                    GitHub Project Repository
                 </a>
             </div>
         </div>
     </div>
 
     <!-- Hero Section -->
-    <section class="hero fade-in">
+    <section class="hero">
         <div class="container">
             <h1 class="title-gradient">Rush Parkour</h1>
             <div class="tagline">Patience, Precision, and Perseverance</div>
-            <p class="hero-desc">An interactive 3D platforming experience demonstrating how standard school computers can be used to build and optimize real-time, physics-based software. Developed for the CBSE Skill Expo.</p>
+            <p class="hero-desc">
+                An interactive 3D precision platformer engineered on everyday consumer hardware. Developed as an educational exploration of real-time 3D simulation, spatial mathematics, and physics-driven mechanics for the CBSE Skill Expo under the theme <em>Animation, Visual Effects, Gaming, Comics</em>.
+            </p>
             
             <div class="btn-group">
                 <a href="https://github.com/AryansDevStudios/RushParkour/releases/download/v1.0/RushParkour_v1.0.zip" class="btn btn-primary">
-                    Download Project (744 MB)
+                    Download Standalone Build (744 MB)
+                </a>
+                <a href="#assessment" class="btn btn-outline">
+                    CBSE Assessment Criteria
                 </a>
             </div>
 
             <div class="hero-stats">
                 <div class="stat-item">
-                    <span class="stat-value">UE 5.3.2</span>
-                    <span class="stat-label">Development Tool</span>
+                    <span class="stat-value">Unreal Engine 5</span>
+                    <span class="stat-label">Core Runtime Engine</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-value">60+</span>
-                    <span class="stat-label">FPS (Smooth Performance)</span>
+                    <span class="stat-value">60–70+ FPS</span>
+                    <span class="stat-label">Verified on Integrated Laptop</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-value">< 1 GB</span>
-                    <span class="stat-label">Optimized File Size</span>
+                    <span class="stat-value">&lt; 1 GB</span>
+                    <span class="stat-label">Lightweight Standalone Size</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">100%</span>
+                    <span class="stat-label">Visual Logic (Blueprint)</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Assessment Criteria -->
-    <section class="assessment-section fade-in" id="assessment">
+    <!-- CBSE ASSESSMENT CRITERIA DASHBOARD (SINGLE-SCREEN VIEWPORT OPTIMIZED) -->
+    <section class="assessment-section" id="assessment">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" style="color: #fff;">CBSE Assessment Criteria</h2>
-                <p>How this project directly addresses the CBSE Skill Expo evaluation framework in a balanced and practical manner.</p>
+                <h2 class="section-title">CBSE Assessment Criteria</h2>
+                <p class="section-desc">
+                    Comprehensive evaluation mapping aligned with Circular No. CBSE/SE/JD(SP)/2026. Structured in concise points for rapid official assessment.
+                </p>
             </div>
             
-            <div class="criteria-grid">
-                <!-- Innovation -->
+            <div class="criteria-dashboard">
+                
+                <!-- 1. Innovation & Originality (25%) -->
                 <div class="criteria-card">
                     <div class="criteria-header">
-                        <h3 class="criteria-title">Innovation & Originality</h3>
+                        <h3 class="criteria-title">1. Innovation &amp; Originality</h3>
                         <span class="criteria-weight">25%</span>
                     </div>
                     <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 25%;"></div></div>
                     <ul class="criteria-list">
-                        <li>Explores the creation of a full 3D interactive experience by a student, transitioning from consuming games to engineering them.</li>
-                        <li>Implements a unique camera system (2.5D view in a 3D world) to simplify user controls and focus attention on timing rather than camera management.</li>
-                        <li>Features originally designed levels and physics-based challenges constructed from scratch.</li>
+                        <li><strong>Original 3D Game Design:</strong> Transitioned from playing digital games to learning hands-on 3D software development by authoring original sky levels and obstacle logic from scratch.</li>
+                        <li><strong>Stabilized 2.5D Camera:</strong> Implemented a fixed-perspective camera in a 3D environment, removing confusing mouse camera rotation so players focus purely on jump timing.</li>
+                        <li><strong>Pure Skill Mechanics:</strong> Built around disciplined jump timing with no artificial checkpoints, turning trial into learning and resilience.</li>
                     </ul>
                 </div>
-                
-                <!-- Research -->
+
+                <!-- 2. Research Depth & Problem Identification (20%) -->
                 <div class="criteria-card">
                     <div class="criteria-header">
-                        <h3 class="criteria-title">Research Depth & Problem ID</h3>
+                        <h3 class="criteria-title">2. Research Depth</h3>
                         <span class="criteria-weight">20%</span>
                     </div>
                     <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 20%;"></div></div>
                     <ul class="criteria-list">
-                        <li>Identified the challenge of running complex 3D software smoothly on standard, accessible computers (like those with integrated graphics).</li>
-                        <li>Researched optimization techniques to ensure the project performs well without requiring expensive graphics cards.</li>
-                        <li>Studied how computer-controlled characters navigate environments to create responsive, challenging interactions.</li>
+                        <li><strong>Hardware Barrier Research:</strong> Investigated why standard school/home computers struggle with modern 3D games and developed methods to overcome hardware limits.</li>
+                        <li><strong>3D Mesh Optimization (Blender):</strong> Researched polygon reduction techniques (retopology) to simplify 3D models without losing visual quality.</li>
+                        <li><strong>Navigation Algorithms:</strong> Studied how computer-controlled entities navigate platform boundaries safely using built-in pathfinding logic.</li>
                     </ul>
                 </div>
 
-                <!-- Application -->
+                <!-- 3. Application & Relevance (15%) -->
                 <div class="criteria-card">
                     <div class="criteria-header">
-                        <h3 class="criteria-title">Application & Relevance</h3>
+                        <h3 class="criteria-title">3. Application &amp; Relevance</h3>
                         <span class="criteria-weight">15%</span>
                     </div>
                     <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 15%;"></div></div>
                     <ul class="criteria-list">
-                        <li>Directly applies concepts of Physics (gravity, momentum) and Mathematics (geometry, spatial coordinates) in a practical, interactive format.</li>
-                        <li>Demonstrates experiential, skill-based learning aligned with NEP 2020 by turning abstract logic into a functioning digital product.</li>
+                        <li><strong>Applied STEM Learning:</strong> Connects physics concepts (gravity, velocity curves, momentum) and geometry (coordinate vectors) into a functioning product.</li>
+                        <li><strong>NEP 2020 Vocational Alignment:</strong> Fulfills national skill-education goals by mastering modern digital media tools and interactive design workflows.</li>
+                        <li><strong>Complete Project Lifecycle:</strong> Successfully bridged every step: concept design &rarr; 3D asset modeling &rarr; logic programming &rarr; compiled Windows build.</li>
                     </ul>
                 </div>
 
-                <!-- Technical Execution -->
+                <!-- 4. Technical Execution (15%) -->
                 <div class="criteria-card">
                     <div class="criteria-header">
-                        <h3 class="criteria-title">Technical Execution</h3>
+                        <h3 class="criteria-title">4. Technical Execution</h3>
                         <span class="criteria-weight">15%</span>
                     </div>
                     <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 15%;"></div></div>
                     <ul class="criteria-list">
-                        <li>Successfully built using professional-grade tools (Unreal Engine 5 and 3D modeling software).</li>
-                        <li>Implemented visual logic (programming) to control project rules, movement, and environment behavior.</li>
-                        <li>Achieved a stable frame rate (60+ FPS) ensuring a smooth, responsive user experience.</li>
+                        <li><strong>Industry-Grade Software:</strong> Built using Unreal Engine 5.3.2 and Blender 3D, mirroring modern production pipelines.</li>
+                        <li><strong>Node-Based Visual Scripting:</strong> Programmed character kinematics, crumbling platform timers, and camera viewpoint cycling cleanly via Blueprints.</li>
+                        <li><strong>Consistent 60+ FPS:</strong> Achieved fluid frame rates on standard laptops with integrated graphics (Intel Iris Xe) without expensive GPUs.</li>
                     </ul>
                 </div>
 
-                <!-- Scalability -->
+                <!-- 5. Entrepreneurial Potential (10%) -->
                 <div class="criteria-card">
                     <div class="criteria-header">
-                        <h3 class="criteria-title">Potential & Scalability</h3>
+                        <h3 class="criteria-title">5. Scalability &amp; Potential</h3>
                         <span class="criteria-weight">10%</span>
                     </div>
                     <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 10%;"></div></div>
                     <ul class="criteria-list">
-                        <li>Packaged as a standalone, easily distributable Windows application (under 1 GB footprint).</li>
-                        <li>The foundation is modularly built so new levels, characters, and features can be added without rewriting the core system.</li>
+                        <li><strong>Free Public Distribution:</strong> Standalone executable under 1 GB published via GitHub Releases for easy, friction-free download.</li>
+                        <li><strong>Modular Level Architecture:</strong> Game systems are separated into modular components, allowing new stages, obstacles, and modes to be added easily.</li>
+                        <li><strong>Classroom Demonstration:</strong> Adaptable as a hands-on learning module to demonstrate basic 3D physics and game design to fellow students.</li>
                     </ul>
                 </div>
 
-                <!-- Presentation -->
+                <!-- 6. Presentation & Communication (10%) -->
                 <div class="criteria-card">
                     <div class="criteria-header">
-                        <h3 class="criteria-title">Presentation</h3>
+                        <h3 class="criteria-title">6. Presentation &amp; Docs</h3>
                         <span class="criteria-weight">10%</span>
                     </div>
                     <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 10%;"></div></div>
                     <ul class="criteria-list">
-                        <li>Developed a clear, structured documentation system for the project (README and Technical Details).</li>
-                        <li>Created this dedicated submission website to clearly communicate the project's goals, features, and technical details to evaluators.</li>
+                        <li><strong>Dual-Purpose Web Portals:</strong> Engineered an independent gamer landing website as well as this structured CBSE evaluation portal.</li>
+                        <li><strong>Complete Technical Documentation:</strong> Published clear architectural reports, control schemes, and hardware benchmark tables.</li>
+                        <li><strong>Clean In-Game Experience:</strong> Designed responsive keyboard controls, clear visual feedback, and straightforward pause menus.</li>
                     </ul>
                 </div>
-                
-                <!-- Resource Optimization -->
+
+                <!-- 7. Resource Optimization (5%) -->
                 <div class="criteria-card">
                     <div class="criteria-header">
-                        <h3 class="criteria-title">Resource Optimization</h3>
+                        <h3 class="criteria-title">7. Resource Optimization</h3>
                         <span class="criteria-weight">5%</span>
                     </div>
                     <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 5%;"></div></div>
                     <ul class="criteria-list">
-                        <li>Significantly reduced file sizes by simplifying 3D models (a process called retopology) and compressing assets.</li>
-                        <li>Designed the project to load quickly and run efficiently on everyday hardware, carefully managing computer memory and processing power.</li>
+                        <li><strong>Compact File Footprint:</strong> Kept total build to ~906 MB (~744 MB zip), whereas typical commercial 3D games exceed 15–30 GB.</li>
+                        <li><strong>Detail Scaling (LOD):</strong> Utilized distance-based model simplification so distant platforms require minimal computer memory.</li>
+                        <li><strong>Thermal Management:</strong> Capped frame rate at 70 FPS to prevent laptop overheating during continuous evaluation.</li>
                     </ul>
                 </div>
+
+                <!-- 8. Evaluation Summary / Quick Reference -->
+                <div class="criteria-card summary-card">
+                    <div class="criteria-header">
+                        <h3 class="criteria-title" style="color: var(--accent-cyan);">Evaluation Summary</h3>
+                        <span class="summary-badge">Total: 100%</span>
+                    </div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 100%; background: var(--gradient-primary);"></div></div>
+                    <ul class="criteria-list">
+                        <li><strong>Category:</strong> Animation, Visual Effects, Gaming, Comics</li>
+                        <li><strong>Participant:</strong> M.P. Public School (RO Prayagraj)</li>
+                        <li><strong>Hardware Target:</strong> Standard School/Home PC</li>
+                        <li><strong>Downloadable Artifact:</strong> Portable .exe (No Setup Needed)</li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </section>
-    <!-- Evidence & Research Data -->
-    <section class="fade-in" style="background: var(--bg-surface-elevated); padding: 4rem 0;">
+
+    <!-- Camera & Perspective Explanation -->
+    <section>
         <div class="container">
-            <div class="section-header" style="margin-bottom: 2rem;">
-                <h2 class="section-title">Evidence-Based Research</h2>
-                <p>Proving our optimization claims through performance testing on standard hardware.</p>
-            </div>
-            
-            <div class="grid-2">
-                <div class="card" style="display: flex; flex-direction: column; justify-content: center;">
-                    <h3 style="color: var(--accent-cyan); margin-bottom: 1.5rem;">Hardware Compatibility</h3>
-                    <p>To align with the NEP 2020 goal of accessible education, we conducted research on optimizing 3D software for non-gaming school computers. Our evidence shows that through strict polygon reduction, LOD (Level of Detail) management, and texture compression, <strong>Rush Parkour</strong> runs smoothly on integrated graphics.</p>
+            <div class="camera-card">
+                <div class="camera-icon">🎥</div>
+                <div>
+                    <h3 class="camera-title">Stabilized Camera Perspective (2.5D View in a 3D World)</h3>
+                    <p style="margin: 0; font-size: 0.92rem; color: #cbd5e1; line-height: 1.6;">
+                        While the platforms, sky environment, and character are constructed in <strong>full 3D coordinate space</strong>, the camera viewpoint is locked to a stabilized tracking plane. <strong>Mouse camera control is disabled by design</strong>, ensuring that players never struggle with camera angles and can focus entirely on spatial judgment and jump timing. Pressing the <kbd style="background: #252a3d; border: 1px solid #4a5568; padding: 2px 7px; border-radius: 4px; font-family: var(--font-mono); color: #fff;">P</kbd> key smoothly cycles through predefined viewing angles (Behind Character, Front View, and Overhead View).
+                    </p>
                 </div>
-                <div class="card">
-                    <h3 style="margin-bottom: 1rem;">FPS Benchmark (1080p High)</h3>
-                    
-                    <div style="margin-bottom: 1rem;">
-                        <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.85rem; margin-bottom: 0.5rem;">
-                            <span>Intel Core i5 (Iris Xe Integrated)</span>
-                            <span style="color: var(--accent-cyan);">60-70 FPS</span>
-                        </div>
-                        <div class="progress-bar-bg" style="height: 8px; background: rgba(255,255,255,0.05);"><div class="progress-bar-fill" style="width: 65%; background: var(--gradient-primary);"></div></div>
+            </div>
+
+            <!-- Controls Layout -->
+            <div class="section-header" style="margin-bottom: 1.5rem;">
+                <h2 class="section-title">Controls Reference</h2>
+                <p class="section-desc">Streamlined keyboard layout engineered for quick learning and responsive platform navigation.</p>
+            </div>
+            <div style="max-width: 650px; margin: 0 auto; background: var(--bg-surface); padding: 1.5rem 2rem; border-radius: 8px; border: 1px solid var(--border-subtle);">
+                <div class="key-row">
+                    <div style="display: flex; gap: 0.4rem;">
+                        <span class="key-btn">A</span>
+                        <span class="key-btn">D</span>
                     </div>
-                    
-                    <div style="margin-bottom: 1rem;">
-                        <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.85rem; margin-bottom: 0.5rem;">
-                            <span>NVIDIA GTX 1650 (Dedicated)</span>
-                            <span style="color: var(--accent-cyan);">120+ FPS</span>
-                        </div>
-                        <div class="progress-bar-bg" style="height: 8px; background: rgba(255,255,255,0.05);"><div class="progress-bar-fill" style="width: 100%; background: var(--gradient-primary);"></div></div>
-                    </div>
-                    
-                    <div>
-                        <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.85rem; margin-bottom: 0.5rem;">
-                            <span>Standard School PC (Intel UHD)</span>
-                            <span style="color: var(--accent-cyan);">40-50 FPS</span>
-                        </div>
-                        <div class="progress-bar-bg" style="height: 8px; background: rgba(255,255,255,0.05);"><div class="progress-bar-fill" style="width: 45%; background: var(--gradient-primary);"></div></div>
-                    </div>
+                    <div class="key-action">Move left and right along the course</div>
+                </div>
+                <div class="key-row">
+                    <span class="key-btn" style="min-width: 110px;">Spacebar</span>
+                    <div class="key-action">Jump across platform gaps</div>
+                </div>
+                <div class="key-row">
+                    <span class="key-btn">P</span>
+                    <div class="key-action">Toggle camera perspective angle (Behind / Front / Overhead)</div>
+                </div>
+                <div class="key-row">
+                    <span class="key-btn" style="min-width: 75px;">Escape</span>
+                    <div class="key-action">Open pause menu (Resume or Restart run)</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Development Process Timeline -->
-    <section class="fade-in" style="padding: 4rem 0;">
+    <!-- Technical Terms Explained in Simple Language -->
+    <section style="background: var(--bg-surface-elevated); padding: 3rem 0;">
         <div class="container">
-            <div class="section-header" style="margin-bottom: 3rem;">
-                <h2 class="section-title">Development Process</h2>
-                <p>The structured, step-by-step approach used to engineer the product from scratch.</p>
-            </div>
-            
-            <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 800px; margin: 0 auto;">
-                <div class="card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem;">
-                    <div style="font-family: var(--font-display); font-size: 2rem; color: var(--accent-gold); font-weight: 900; opacity: 0.5;">01</div>
-                    <div>
-                        <h4 style="margin: 0 0 0.5rem 0; color: #fff;">Conceptualization & Research</h4>
-                        <p style="margin: 0; font-size: 0.95rem;">Studying platforming mechanics, designing level layouts on paper, and researching accessible optimization techniques.</p>
-                    </div>
-                </div>
-                
-                <div class="card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem;">
-                    <div style="font-family: var(--font-display); font-size: 2rem; color: var(--accent-cyan); font-weight: 900; opacity: 0.5;">02</div>
-                    <div>
-                        <h4 style="margin: 0 0 0.5rem 0; color: #fff;">3D Asset Creation (Blender)</h4>
-                        <p style="margin: 0; font-size: 0.95rem;">Designing modular platforms and obstacles, followed by strict retopology to keep polygon counts low for performance.</p>
-                    </div>
-                </div>
-                
-                <div class="card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem;">
-                    <div style="font-family: var(--font-display); font-size: 2rem; color: var(--accent-purple); font-weight: 900; opacity: 0.5;">03</div>
-                    <div>
-                        <h4 style="margin: 0 0 0.5rem 0; color: #fff;">Logic & Programming (Unreal Engine 5)</h4>
-                        <p style="margin: 0; font-size: 0.95rem;">Implementing player movement, physics triggers, camera constraints, and pathfinding algorithms via Blueprint Visual Scripting.</p>
-                    </div>
-                </div>
-                
-                <div class="card" style="padding: 1.5rem; display: flex; align-items: center; gap: 1.5rem;">
-                    <div style="font-family: var(--font-display); font-size: 2rem; color: #ff4757; font-weight: 900; opacity: 0.5;">04</div>
-                    <div>
-                        <h4 style="margin: 0 0 0.5rem 0; color: #fff;">Testing & Packaging</h4>
-                        <p style="margin: 0; font-size: 0.95rem;">Conducting FPS stress tests on standard laptops and packaging the final build into a distributable, standalone executable.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Visuals (Submission Requirement) -->
-    <section class="fade-in" style="background: var(--bg-surface-elevated); padding: 4rem 0;">
-        <div class="container">
-            <div class="section-header" style="margin-bottom: 2rem;">
-                <h2 class="section-title">Project Video & Visuals</h2>
-                <p>Gameplay demonstration and development behind-the-scenes.</p>
-            </div>
-            
-            <div style="max-width: 800px; margin: 0 auto; background: #000; border-radius: 8px; border: 1px solid var(--border-subtle); overflow: hidden; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
-                <!-- REPLACE THIS WITH YOUR YOUTUBE IFRAME -->
-                <p style="font-family: var(--font-mono); color: var(--text-muted); text-align: center;">[Embed 1-minute Gameplay/Trailer Video Here]<br><span style="font-size: 0.8rem;">(Required by CBSE Submission Guidelines)</span></p>
+            <div class="section-header">
+                <h2 class="section-title">Key Technical Concepts Explained</h2>
+                <p class="section-desc">Translating complex game development terminology into clear, accessible concepts.</p>
             </div>
             
             <div class="grid-3">
-                <div class="card" style="aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; padding: 0;">
-                    <p style="font-family: var(--font-mono); color: var(--text-muted); font-size: 0.8rem;">[Screenshot 1 Placeholder]</p>
+                <div class="term-card">
+                    <span class="term-badge">3D Design & Modeling</span>
+                    <h4 class="term-title">Blender &amp; Polygon Optimization</h4>
+                    <p class="term-desc">
+                        <strong>Blender</strong> is professional software used to design 3D models. To make platforms run smoothly on basic computers, models underwent <em>retopology</em>—a process of reducing the number of geometric polygons while keeping the shape visually identical.
+                    </p>
                 </div>
-                <div class="card" style="aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; padding: 0;">
-                    <p style="font-family: var(--font-mono); color: var(--text-muted); font-size: 0.8rem;">[Screenshot 2 Placeholder]</p>
+
+                <div class="term-card">
+                    <span class="term-badge">Visual Programming</span>
+                    <h4 class="term-title">Blueprint Visual Scripting</h4>
+                    <p class="term-desc">
+                        Instead of typing thousands of lines of code syntax, Unreal Engine allows programming using <strong>visual logic blocks</strong>. This was used to program player jumping, gravity triggers, platform movement, and camera viewpoint switching.
+                    </p>
                 </div>
-                <div class="card" style="aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; padding: 0;">
-                    <p style="font-family: var(--font-mono); color: var(--text-muted); font-size: 0.8rem;">[Screenshot 3 Placeholder]</p>
+
+                <div class="term-card">
+                    <span class="term-badge">Hardware Performance</span>
+                    <h4 class="term-title">Integrated Graphics (iGPU)</h4>
+                    <p class="term-desc">
+                        Most school laptops do not have expensive dedicated gaming cards; they rely on <strong>integrated graphics</strong> built directly into the main processor. <em>Rush Parkour</em> was specifically calibrated to achieve a smooth 60+ FPS on these everyday machines.
+                    </p>
+                </div>
+
+                <div class="term-card">
+                    <span class="term-badge">Physics Simulation</span>
+                    <h4 class="term-title">Reactive Crumbling Platforms</h4>
+                    <p class="term-desc">
+                        Platforms remain stable until the character steps on them. A delayed timer then awakens <strong>real-time gravity physics</strong>, causing the platform to drop away into the void, testing the player's reaction time and speed.
+                    </p>
+                </div>
+
+                <div class="term-card">
+                    <span class="term-badge">Automated Navigation</span>
+                    <h4 class="term-title">Enemy Pathfinding (NavMesh)</h4>
+                    <p class="term-desc">
+                        Obstacles patrol platforms automatically using mathematical <strong>pathfinding meshes</strong>. They calculate walkable boundaries so they do not fall off edges and actively pace back and forth to create dynamic jump hazards.
+                    </p>
+                </div>
+
+                <div class="term-card">
+                    <span class="term-badge">Memory Management</span>
+                    <h4 class="term-title">Level of Detail (LOD) &amp; Caching</h4>
+                    <p class="term-desc">
+                        As platforms get further from the camera, the computer automatically swaps them for simpler 3D representations. Combined with loading assets into computer memory at startup, this prevents game stuttering and keeps file sizes small.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Technical Implementation Simplified -->
-    <section class="fade-in">
+    <!-- Project Gallery & Visual Proof -->
+    <section>
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Technical Implementation</h2>
-                <p>How the interactive world was built using accessible technology.</p>
+                <h2 class="section-title">Project Demonstration &amp; Visuals</h2>
+                <p class="section-desc">Visual documentation of gameplay, level design, and development testing.</p>
             </div>
             
-            <!-- Camera Note -->
-            <div class="card" style="margin-bottom: 3rem; border-color: var(--accent-cyan);">
-                <h3 style="color: var(--accent-cyan); text-align: center;">Focused Camera System</h3>
-                <p style="font-size: 1.05rem; color: #fff; text-align: center;">
-                    While the environment is fully 3D, the player's view is locked to a specific tracking angle. <br><br>
-                    <strong>The mouse does NOT control the camera.</strong> Players use the <kbd style="background: #333; padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono);">P</kbd> key to cycle through predefined viewpoints (Front, Behind, Overhead). This reduces complexity and allows the user to focus entirely on movement and timing.
+            <div style="max-width: 800px; margin: 0 auto 1.5rem auto; background: #0c0e17; border-radius: 8px; border: 1px solid var(--border-subtle); aspect-ratio: 16/9; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem;">
+                <div style="font-size: 2.5rem; margin-bottom: 0.5rem; opacity: 0.7;">🎮</div>
+                <div style="font-family: var(--font-display); font-size: 1.1rem; color: #fff; margin-bottom: 0.35rem;">Gameplay Demonstration Video</div>
+                <p style="font-size: 0.85rem; color: var(--text-muted); max-width: 480px; margin: 0;">
+                    Video walkthrough demonstrating lateral 2.5D traversal, dynamic platform triggers, enemy AI encounters, and camera perspective toggling.
                 </p>
             </div>
-
+            
             <div class="grid-3">
-                <div class="card">
-                    <h3>3D Environment Creation</h3>
-                    <p>The world consists of geometric platforms suspended in an open sky. To ensure smooth performance, all 3D models were optimized in <strong>Blender</strong> (a 3D design software) to reduce their complexity without losing visual quality.</p>
+                <div class="card" style="aspect-ratio: 16/9; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 1rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--accent-cyan);">Sky Environment &amp; Anchors</span>
+                    <span style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Modular floating platform layout</span>
                 </div>
-                <div class="card">
-                    <h3>Physics & Interaction</h3>
-                    <p>The project uses a physics engine to simulate real-world gravity. Some platforms remain solid, while others are programmed to react and fall away the moment they are touched, testing the user's reaction time.</p>
+                <div class="card" style="aspect-ratio: 16/9; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 1rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--accent-purple);">Physics-Driven Hazards</span>
+                    <span style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Reactive collapsing platforms</span>
                 </div>
-                <div class="card">
-                    <h3>Computer-Controlled Obstacles</h3>
-                    <p>Obstacles and enemies move independently using <strong>Pathfinding Algorithms</strong>. They can detect the user and calculate routes across the 3D platforms, adding dynamic challenges to the environment.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Controls -->
-    <section class="fade-in" style="background: var(--bg-surface-elevated);">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Controls</h2>
-                <p>Simple, keyboard-only input designed for precise movement.</p>
-            </div>
-            <div style="max-width: 600px; margin: 0 auto; background: var(--bg-base); padding: 2rem; border-radius: 12px; border: 1px solid var(--border-subtle);">
-                <div class="key-row">
-                    <div class="key-btn">A</div> <div class="key-btn">D</div>
-                    <div class="key-action">Move left and right along the path</div>
-                </div>
-                <div class="key-row">
-                    <div class="key-btn" style="width: 120px;">Spacebar</div>
-                    <div class="key-action">Jump between platforms</div>
-                </div>
-                <div class="key-row">
-                    <div class="key-btn">P</div>
-                    <div class="key-action">Toggle camera view (Front / Behind / Overhead)</div>
-                </div>
-                <div class="key-row" style="border-bottom: none; padding-bottom: 0; margin-bottom: 0;">
-                    <div class="key-btn" style="width: 80px;">Escape</div>
-                    <div class="key-action">Open the pause menu</div>
+                <div class="card" style="aspect-ratio: 16/9; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 1rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--accent-gold);">Camera Perspective Angles</span>
+                    <span style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">Behind, Front, and Overhead modes</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Entrepreneurial Roadmap -->
-    <section class="fade-in">
-        <div class="container">
-            <div class="section-header" style="margin-bottom: 2rem;">
-                <h2 class="section-title">Entrepreneurial Viability</h2>
-                <p>Addressing the 10% CBSE rubric for real-world application and scalability.</p>
-            </div>
-            
-            <div class="grid-2">
-                <div class="card">
-                    <h3 style="color: var(--accent-gold); display: flex; align-items: center; gap: 0.5rem;">
-                        <span>📈</span> Commercial Scaling (Indie Game)
-                    </h3>
-                    <p>The gaming industry is one of the fastest-growing sectors. <strong>Rush Parkour</strong> is built on a modular foundation, meaning new levels, skins, and mechanics can be rapidly prototyped. The project can be easily scaled into a commercial product and published on platforms like Steam or Itch.io for revenue generation.</p>
-                </div>
-                <div class="card">
-                    <h3 style="color: var(--accent-cyan); display: flex; align-items: center; gap: 0.5rem;">
-                        <span>🎓</span> Educational Toolkit
-                    </h3>
-                    <p>Beyond being a game, the optimized source code and assets can be packaged into an <strong>educational toolkit</strong>. This can be distributed to other schools, teaching students how to build their own games within hardware constraints, fostering digital literacy and aligning with skill-based learning.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Meet the Team -->
-    <section class="fade-in" style="background: var(--bg-surface-elevated); padding: 4rem 0;">
-        <div class="container">
-            <div class="section-header" style="margin-bottom: 2rem;">
-                <h2 class="section-title">The Team</h2>
-                <p>Representing M.P. Public School, Maharajganj</p>
-            </div>
-            
-            <div class="grid-3" style="max-width: 900px; margin: 0 auto;">
-                <div class="card" style="text-align: center; padding: 2rem 1rem;">
-                    <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.05); border-radius: 50%; margin: 0 auto 1rem auto; display: flex; align-items: center; justify-content: center; font-size: 2rem;">🧑‍💻</div>
-                    <h3 style="margin-bottom: 0.2rem; font-size: 1.1rem; color: #fff;">Aryan Gupta</h3>
-                    <p style="font-size: 0.9rem; color: var(--accent-cyan); margin: 0;">Lead Developer (Student)</p>
-                </div>
-                <div class="card" style="text-align: center; padding: 2rem 1rem;">
-                    <div style="width: 80px; height: 80px; background: rgba(255,255,255,0.05); border-radius: 50%; margin: 0 auto 1rem auto; display: flex; align-items: center; justify-content: center; font-size: 2rem;">👤</div>
-                    <h3 style="margin-bottom: 0.2rem; font-size: 1.1rem; color: #fff;">[Student 2 Name]</h3>
-                    <p style="font-size: 0.9rem; color: var(--accent-cyan); margin: 0;">Co-Developer / Designer</p>
-                    <p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.5rem;">(Optional - Add/Remove based on team size)</p>
-                </div>
-                <div class="card" style="text-align: center; padding: 2rem 1rem; border-color: rgba(245, 183, 0, 0.3);">
-                    <div style="width: 80px; height: 80px; background: rgba(245, 183, 0, 0.1); border-radius: 50%; margin: 0 auto 1rem auto; display: flex; align-items: center; justify-content: center; font-size: 2rem;">👨‍🏫</div>
-                    <h3 style="margin-bottom: 0.2rem; font-size: 1.1rem; color: #fff;">[Mentor Name]</h3>
-                    <p style="font-size: 0.9rem; color: var(--accent-gold); margin: 0;">Mentor Teacher</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- Institutional Credit & Evaluation Footer -->
     <footer>
         <div class="container">
-            <div class="footer-event">Submitted for CBSE Skill Expo & Guidance Festival 2026–27</div>
-            <div style="color: #fff; margin-bottom: 1rem;">M.P. Public School, Anand Nagar, Maharajganj</div>
-            <p>Developed by Aryan Gupta (AryansDevStudios)</p>
-            <div class="footer-links">
-                <a href="https://github.com/AryansDevStudios" target="_blank">Developer GitHub</a>
-                <a href="https://github.com/AryansDevStudios/RushParkour" target="_blank">Project Source Code</a>
+            <div class="footer-event">CBSE Skill Expo & Guidance Festival 2026–27</div>
+            <div style="color: #cbd5e1; margin-bottom: 0.35rem; font-weight: 500;">
+                Theme: Animation, Visual Effects, Gaming, Comics (AVGC)
             </div>
-            <div class="footer-bottom">
-                Built using Unreal Engine 5 &middot; Optimization focused on accessible hardware.
+            <div style="color: var(--text-muted); margin-bottom: 1rem;">
+                Participating Institution: <strong>M.P. Public School, Anand Nagar, Maharajganj</strong> &middot; Regional Office: Prayagraj
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 1.5rem auto;">
+                Developed by Aryan Gupta (AryansDevStudios) as a student project showcasing real-time 3D development, physics simulation, and software optimization on everyday school hardware.
+            </p>
+            <div class="footer-links">
+                <a href="https://github.com/AryansDevStudios/RushParkour" target="_blank">GitHub Project Repository</a>
+                <span style="color: var(--border-subtle);">&bull;</span>
+                <a href="https://github.com/AryansDevStudios/RushParkour/releases/tag/v1.0" target="_blank">Download Executable Release</a>
+                <span style="color: var(--border-subtle);">&bull;</span>
+                <a href="../index.html">Independent Game Landing Page</a>
+            </div>
+            <div style="font-size: 0.76rem; color: rgba(255,255,255,0.3); border-top: 1px solid var(--border-subtle); padding-top: 1rem; margin-top: 1rem;">
+                Organized by the Department of Skill Education, Central Board of Secondary Education (CBSE), Ministry of Education, Govt. of India.
             </div>
         </div>
     </footer>
 
-    <script>
-        // Scroll fade-in animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-    </script>
 </body>
 </html>
